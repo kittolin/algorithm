@@ -14,8 +14,8 @@
 using namespace std;
 
 struct JavaBean {
-    int value;
-    int cost;
+    double value;   // 不能用 int，否则会导致 Compare 函数计算精度丢失
+    double cost;
 };
 
 const int MAXN = 1000 + 10;
@@ -33,11 +33,11 @@ double Greedy(int m, int n) {
     for(int i = 0; i < n; i++) {
         // 够买的全买，不够买的按比例买
         if (m >= rooms[i].cost) {
-            m -= rooms[i].cost;
             result += rooms[i].value;
+            m -= rooms[i].cost;
         } else {
-            m = 0;
             result += (m / rooms[i].cost * rooms[i].value);
+            m = 0;  // !!! m = 0 不能放到 result 更新前
             break;
         }
     }
@@ -51,9 +51,9 @@ int main() {
             break;
         }
         for(int i = 0; i < n; i++) {
-            scanf("%d %d", &rooms[i].value, &rooms[i].cost);
+            scanf("%lf %lf", &rooms[i].value, &rooms[i].cost);
         }
-        printf("%.3f", Greedy(m, n));
+        printf("%.3f\n", Greedy(m, n));
     }
 
     return 0;

@@ -13,6 +13,7 @@
 #include <iostream>
 #include <cstdio>
 #include <cstring>
+#include <algorithm>
 
 using namespace std;
 
@@ -78,7 +79,12 @@ int main() {
     while(scanf("%s %s", str1 + 1, str2 + 1) != EOF) {
         int n = strlen(str1 + 1);
         int m = strlen(str2 + 1);
-        printf("%d", CommonSubSeq1(n, m));
+        // for(int i = 0; i <= n; i++) {
+        //     for(int j = 0; j <= m; j++) {
+        //         memo[i][j] = -1;
+        //     }
+        // }
+        printf("%d\n", CommonSubSeq3(n, m));
     }
     return 0;
 }

@@ -39,7 +39,7 @@ bool valid(Status s) {
 int BFS(int n, int k) {
     queue<Status> q;
     q.push(Status(n, 0));   // 压入起始状态
-    visited[n] = true;      // 标记起点已访问
+    visited[n] = true;      // 标记起点已放入队列
 
     while (!q.empty()) {
         Status cur = q.front();
@@ -47,7 +47,19 @@ int BFS(int n, int k) {
         if (cur.pos == k) { // 查找成功
             return cur.time;
         }
-        // !!! 在这里标记会导致代码超时
+        /*
+        * !!! 在队列取出后再标记，会导致代码超时，例如：
+        *
+        *                                  (2, 0)
+        *                 /                  |    \
+        *           (1, 1)                (3, 1)  (4, 1)
+        *         /   |   \             /   |   \
+        *   (0, 2) (2, 2) (2, 2)  (2, 2) (4, 2) (6, 2)
+        *
+        * 在队列取出 (3, 1) 访问后，会导致重复放入 (4, 2)
+        * queue: (4, 1), (0, 2), (4, 2), (6, 2)
+        * visited: 1, 2, 3
+        */
         // visited[cur.pos] = true;
 
         // 压入新的三个状态
@@ -63,7 +75,7 @@ int BFS(int n, int k) {
             next.time ++;
             if (valid(next)) {
                 q.push(next);
-                visited[next.pos] = true;   // 标记该点已访问
+                visited[next.pos] = true;   // 标记该点已放入队列
             }
         }
     }

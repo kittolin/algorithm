@@ -18,8 +18,8 @@
 - 目标状态：(E, lowest cost)
 
 ### 搜索树
-<img src="../images/search/search_tree.png">
+<img src="../images/search/search_tree.png" width="500" height="250">
 
 ### 搜索算法
-- 宽度优先遍历(BFS)
-- 广度优先遍历(DFS)
+- 广度优先遍历(BFS)
+- 深度优先遍历(DFS)

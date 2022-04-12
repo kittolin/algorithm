@@ -23,3 +23,16 @@ a = b * k + r |     | r = g * (l - m * l)
 
 ## 最小公倍数(Least Common Multiple, LCM)
 LCM(a, b) = a * b / GCD(a, b)
+
+## 素数
+### n 是否为素数
+只需判断 2 ~ sqrt(n) 的数能否被 n 整除即可。
+
+因为 n 的约数是成对出现的，如果有大于 sqrt(n) 的数能被 n 整除，则必有小于 sqrt(n) 的数能被 n 整除。
+
+### [0, n] 有哪些是素数
+素数筛法：将素数的倍数标记为非素数
+
+<img src="../images/math/prime_number_sieve.png" width="350" height="100">
+
+### 

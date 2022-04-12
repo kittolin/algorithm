@@ -15,7 +15,7 @@ char Int2Char(int i) {
     if (i < 10) {
         return i + '0';
     }
-    return i - 10 + 'A';
+    return i - 10 + 'a';
 }
 
 string Decimal2N(int decimal, int n) {

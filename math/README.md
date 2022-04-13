@@ -58,3 +58,9 @@ LCM(a, b) = a * b / GCD(a, b)
 
 <img src="../images/math/num_of_factors.png" width="250" height="300">
 
+## 快速幂(O(log n))
+任意正整数 n 都可以表示成：n = 2<sup>i</sup> + 2<sup>j</sup> ... + 2<sup>n</sup>
+
+例如：29<sub>(2)</sub> = 11101 = 2<sup>4</sup> + 2<sup>3</sup> + 2<sup>2</sup> + 2<sup>0</sup>
+
+则 x<sup>n</sup> = x<sup>2<sup>i</sup></sup> * x<sup>2<sup>j</sup></sup> * ... * x<sup>2<sup>n</sup></sup>

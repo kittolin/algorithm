@@ -6,11 +6,22 @@
 ## 归并排序
 将两个有序序列合并成一个更大的有序序列，递归进行，时间复杂度：O(NlogN)
 
-<img src="../images/sort/merge_sort.png" width="400">
+<img src="../images/sort/merge_sort.png" width="350">
 
-<img src="../images/sort/merge_sort_combine.png" width="400">
+<img src="../images/sort/merge_sort_combine.png" width="350">
 
 ## 快速排序
+随机选择一个元素作为 pivot，在一次 Partition 过程中，将小于 pivot 的元素放到 pivot 左边，将大于 pivot 的元素放到 pivot 右边，pivot 确定最终位置；
+
+左右部分不断递归下去，时间复杂度：O(NlogN)。
+
+如果序列局部有序，选择第一个元素作为 pivot 的话，会导致递归树向一边倾斜，时间复杂度退化到 O(n ^ 2)，故随机选择元素作为 pivot。
+
+例如原序列：8  6  3  4  1  7  2  5
+
+<img src="../images/sort/quick_sort.png" width="350">
+
+<img src="../images/sort/quick_sort_partition.png" width="350">
 
 ## 逆序数对
 ```

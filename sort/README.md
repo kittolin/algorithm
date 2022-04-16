@@ -32,6 +32,13 @@
 
 利用归并排序，在任一 Combine 过程中，可以统计前面的有序序列和当前 j 指向元素构成的逆序数，不断递归累加。
 
-<img src="../images/sort/reverse_pair.png" width="400">
+<img src="../images/sort/reverse_pair.png" width="350">
 
 ## 第 k 大数
+第 k 大数即排好序的数组中索引为 n-k 的数字。
+
+利用快速排序，每次执行 Partition 后，总会有一个元素确定最终位置 pos，可以根据 pos 和 n-k 的大小关系决定只向某一边继续递归，时间复杂度锐减到 O(N)。
+
+$$ n + n/2 + n/4 + ... + 1 = \sum_{i=0}^{logn}\frac{n}{2^i} = n * \sum_{i=0}^{logn}\frac{1}{2^i} = O(n) $$
+
+<img src="../images/sort/k_th_largest_element.png" width="350">

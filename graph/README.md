@@ -18,6 +18,31 @@
 
 <img src="../images/graph/kruskal.png" width="400">
 
+## 最短路径问题
+### Dijkstra Algorithm
+采用动态规划的思想：
+- 状态转移方程：minD(D) = Min{minD(A) + <A, D>, minD(B) + <B, D>, minD(C) + <C, D>}
+- 边界：minD(源点) = 0
+
+每次都选择当前未访问顶点中 minD 数组值最小的顶点 v，将其标记为已访问（因为不可能再有通过其他顶点到达 v 且 minD 值更小的），并更新 v 指向的所有未访问顶点的 minD 值。
+
+时间复杂度：O(V ^ 2)
+
+<img src="../images/graph/dijkstra_sample.png" width="300">
+
+|         | A | B   | C   | D   |
+| ------- | - | --- | --- | --- |
+| 初始值   | 0 | INF | INF | INF |
+| A 松弛后 | 0 | 1   | 2   | 4   |
+| B 松弛后 | 0 | 1   | 2   | 3   |
+| C 松弛后 | 0 | 1   | 2   | 3   |
+| D 松弛后 | 0 | 1   | 2   | 3   |
+
+### Dijkstra + Heap
+选择离源点最近的点，可以使用优先队列进行优化。
+
+优化后时间复杂度：O(ElogV)
+
 ## 拓扑排序
 AOV(Activity on Vertex) 网中顶点排成线性序列。
 

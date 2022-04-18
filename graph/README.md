@@ -16,4 +16,4 @@
 ### Kruskal Algorithm
 利用并查集，对所有的边按权值从小到大进行遍历。如果该边连接的两个顶点不属于同一个集合，则选中该边并且合并这两个顶点，否则跳过该边。
 
-<img src="../images/graph/kruskal.png">
+<img src="../images/graph/kruskal.png" width="400">

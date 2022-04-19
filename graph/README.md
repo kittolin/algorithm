@@ -44,7 +44,7 @@
 优化后时间复杂度：O(ElogV)
 
 ## 拓扑排序
-AOV(Activity on Vertex) 网中顶点排成线性序列。
+针对 AOV(Activity on Vertex) 网，不带权值的有向无环图，将图中顶点排成线性序列。
 
 例如：推荐学习顺序: 微积分 -> C 语言 -> 离散数学 -> 程序设计 -> 数据结构 -> 算法设计 -> 软件工程
 
@@ -55,3 +55,37 @@ AOV(Activity on Vertex) 网中顶点排成线性序列。
 1，每次取出当前图中入度为 0 的顶点
 
 2，从图中删除该顶点以及它的出边
+
+## 关键路径
+针对 AOE(Activity on Edge) 网，带有权值的有向无环图，求源点到汇点的最长路径。
+
+事件 Vj 的最早开始时间 Ve(j)
+
+- Ve(源点) = 0
+
+- Ve(j) = Max{Ve(j), Ve(i) + weight(i, j)}  (i 是 j 的前序事件，只有所有前序事件都完成了，Vj 才可以开始)
+
+事件 Vj 的最晚开始时间 Vl(j)
+
+- Vl(汇点) = Ve(汇点)
+
+- Vl(j) = Min{Vl{j}, Vl(k) - weight(j, k)} (k 是 j 的后序事件，Vj 再晚也要迁就所有后序事件中最晚发生的最小值)
+
+活动 aj 的最早开始时间 e(j) = Ve(前序事件)
+
+活动 aj 的最晚发生时间 l(j) = Vl(后序事件) - aj
+
+<img src="../images/graph/AOE_ve_vl.png" width="400">
+
+<img src="../images/graph/AOE_ae_al.png" width="400">
+
+## [指令编排](./instrction_arrnagement.cpp)
+抽象成关键路径问题：
+
+- 顶点表示某条指令执行结束，边表示两条指令之间的安全距离(两条指令开始执行时间的差值)
+
+- 所有入度为 0 的顶点的最早开始时间 Ve(Vi) = 1
+
+- 虚拟汇点的最早开始时间（即题目所求最短执行时间），等于所有顶点的最早开始时间的最大值
+
+<img src="../images/graph/instrction_arrangement.png" width="300">

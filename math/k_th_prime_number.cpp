@@ -31,7 +31,7 @@ void Initial() {
             continue;
         }
         // 从 i*i 开始，而不是 i+i，因为 i+i 在前面循环中已被标记为 false 了
-        for (int j = i * i; j < MAXN; j+= i) {
+        for (int j = i * i; j < MAXN; j += i) {
             isPrime[j] = false;
         }
     }

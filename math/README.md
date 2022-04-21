@@ -64,3 +64,7 @@ LCM(a, b) = a * b / GCD(a, b)
 例如：29<sub>(2)</sub> = 11101 = 2<sup>4</sup> + 2<sup>3</sup> + 2<sup>2</sup> + 2<sup>0</sup>
 
 则 x<sup>n</sup> = x<sup>2<sup>i</sup></sup> * x<sup>2<sup>j</sup></sup> * ... * x<sup>2<sup>n</sup></sup>
+
+## [矩阵旋转](./operation_on_matrix.cpp)
+
+<img src="../images/math/operation_on_matrix.png" width="300">

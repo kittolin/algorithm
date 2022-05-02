@@ -25,7 +25,7 @@ int main() {
             scanf("%d", &money);
             if (pq.size() < m) {             // 先放满 m 个数
                 pq.push(money);
-            } else if (money > pq.front()) { // 新元素大于堆顶元素的，弹出堆顶元素，放入新元素 
+            } else if (money > pq.top()) { // 新元素大于堆顶元素的，弹出堆顶元素，放入新元素 
                 pq.pop();
                 pq.push(money);
             }
@@ -34,12 +34,13 @@ int main() {
         // 逆序输出
         int size = pq.size();
         for (int i = size - 1; i >= 0; i--) {
-            buf[i] = pq.front();
+            buf[i] = pq.top();
             pq.pop();
         }
         for (int i = 0; i < size; i++) {
             printf("%d ", buf[i]);
         }
+        printf("\n");
     }
     return 0;
 }

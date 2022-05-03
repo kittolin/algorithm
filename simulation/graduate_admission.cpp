@@ -98,10 +98,6 @@ int main() {
             stus[i].grade = stus[i].GE + stus[i].GI; // 不要除以 2，避免精度问题
         }
         Rank(n);
-        for (int i = 0; i < n; i ++) {
-            printf("number: %d, GE: %d, grade: %d, rank: %d\n", stus[i].number, stus[i].GE, stus[i].grade, stus[i].rank);
-        }
-
         proceedAdmission(n, k);
         OutputAdmission(m);
     }

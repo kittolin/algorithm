@@ -10,3 +10,4 @@
 - [剩余的树](/array/remain_trees.cpp)
 - [日志排序](/sort/sort_logs_by_time.cpp)
 - [单词替换](/string/replace_words.cpp)
+- [能否循环左移得到另一个数](/array/rotate_left_shift_to_another_binary.cpp)

@@ -1,4 +1,5 @@
 ## 无思路
+- [Counterfeit Dollar](/simulation/counterfeit_dollar.cpp)
 
 ## 有思路但做不出来
 - [糖果分享游戏](/simulation/candy_sharing_game.cpp) (特殊输入：可能有奇数)

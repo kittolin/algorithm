@@ -161,10 +161,10 @@ bool DeleteNode(LinkList &l, LNode *p) {
     }
 
     // 将 p 的后继结点值覆盖 p 的结点值，再删除 p 的后继结点
-    LNode *next = p->next;
-    p->data = next->data;
-    p->next = next->next;
-    free(next);
+    LNode *s = p->next;
+    p->data = s->data;
+    p->next = s->next;
+    free(s);
     return true;
 }
 

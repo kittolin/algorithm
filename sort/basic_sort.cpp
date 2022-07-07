@@ -50,7 +50,7 @@ void ShellSort(int n) {
 
 // 冒泡排序：每一趟排序将最小的元素冒到最前面
 void BubbleSort(int n) {
-    for (int i = 0; i < n - 1; i++) {   // n-1 趟
+    for (int i = 0; i < n - 1; i++) {   // 共 n-1 趟
         bool flag = false;
         for (int j = n - 1; j > i; j--) {
             if (arr[j - 1] > arr[j]) {  // 保证稳定性
@@ -89,6 +89,21 @@ int Partition(int left, int right) {
         swap(arr[left], arr[right]);
     }
     return left;
+}
+
+// 选择排序：每趟选择最小的元素加入前面的有序子序列
+void SelectSort(int n) {
+    for (int i = 0; i < n - 1; i++) {   // 无论有序、逆序、乱序，都需要 n-1 趟
+        int min = i;    // 记录最小元素的位置
+        for (int j = i + 1; j < n; j++) {
+            if (arr[j] < arr[min]) {
+                min = j;
+            }
+        }
+        if (min != i) {
+            swap(arr[min], arr[i]);     // 一次交换需要移动元素 3 次
+        }
+    }
 }
 
 void Combine(int left, int mid, int right) {

@@ -65,16 +65,6 @@ void BubbleSort(int n) {
     }
 }
 
-// 快速排序
-void QuickSort(int left, int right) {
-    if (left >= right) {  // Partition 可能返回 right，则进行下层递归时 left > right
-        return;
-    }
-    int pos = Partition(left, right);
-    QuickSort(left, pos - 1);
-    QuickSort(pos + 1, right);
-}
-
 int Partition(int left, int right) {
     int pivot = left + rand() % (right - left + 1); // 随机选择任一 left ~ right 中的元素作为 pivot
     swap(arr[left], arr[pivot]);                    // 将 pivot 元素放到序列最开始
@@ -91,6 +81,16 @@ int Partition(int left, int right) {
     return left;
 }
 
+// 快速排序
+void QuickSort(int left, int right) {
+    if (left >= right) {  // Partition 可能返回 right，则进行下层递归时 left > right
+        return;
+    }
+    int pos = Partition(left, right);
+    QuickSort(left, pos - 1);
+    QuickSort(pos + 1, right);
+}
+
 // 选择排序：每趟选择最小的元素加入前面的有序子序列
 void SelectSort(int n) {
     for (int i = 0; i < n - 1; i++) {   // 无论有序、逆序、乱序，都需要 n-1 趟
@@ -103,6 +103,44 @@ void SelectSort(int n) {
         if (min != i) {
             swap(arr[min], arr[i]);     // 一次交换需要移动元素 3 次
         }
+    }
+}
+
+// 调整以 k 为根的子树为大根堆
+void HeadAdjust(int k, int len) {
+    arr[0] = arr[k];    // arr[0] 暂存子树的根结点
+    int i = k * 2;      // i 是 k 的左孩子
+    while (i <= len) {
+        if (i < len && arr[i] < arr[i + 1]) {   // 右孩子比左孩子更大
+            i ++;
+        }
+
+        if (arr[0] >= arr[i]) { // 找到最终插入位置
+            break;
+        } else {
+            arr[k] = arr[i];    // 孩子上浮
+            k = i;
+            i *= 2;
+        }
+    }
+    arr[k] = arr[0];
+}
+
+// 建立大根堆
+void BuildMaxHeap(int len) {
+    // 堆本质是数组存储的完全二叉树，从索引 1 开始存储
+    // 从后往前调整所有非终端结点
+    for (int i = len / 2; i > 0; i--) {
+        HeadAdjust(i, len);
+    }
+}
+
+// 堆排序
+void HeapSort(int len) {
+    BuildMaxHeap(len);
+    for (int i = len; i > 1; i--) { // 共 n-1 趟
+        swap(arr[1], arr[i]);       // 交换堆顶和堆底元素
+        HeadAdjust(1, i - 1);       // 将剩余的元素调整为大根堆
     }
 }
 
@@ -128,6 +166,7 @@ void Combine(int left, int mid, int right) {
     }
 }
 
+// 归并排序
 void MergeSort(int left, int right) {
     // 只有一个元素，自然是有序的
     if (left == right) {
@@ -138,10 +177,6 @@ void MergeSort(int left, int right) {
     MergeSort(mid + 1, right);
     Combine(left, mid, right);   
 }
-
-
-
-
 
 int main() {
     int n;

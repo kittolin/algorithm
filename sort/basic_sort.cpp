@@ -16,6 +16,20 @@ const int MAXN = 100 + 10;
 int arr[MAXN];
 int tmp[MAXN];
 
+// 插入排序：每次将一个元素插入到前面已有序的子序列中
+void InsertSort(int n) {
+    for (int i = 1; i < n; i++) {
+        if (arr[i] < arr[i - 1]) {      // 保证稳定性
+            int temp = arr[i];          // 暂存，避免被覆盖
+            int j;
+            for (j = i - 1; j >= 0 && arr[j] > temp; j--) {
+                arr[j + 1] = arr[j];    // 所有大于 temp 的都往后挪位
+            }
+            arr[j + 1] = temp;
+        }
+    }
+}
+
 void Combine(int left, int mid, int right) {
     int i = left, j = mid + 1, k = left;
     while (i <= mid && j <= right) {

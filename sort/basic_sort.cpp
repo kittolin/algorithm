@@ -48,6 +48,49 @@ void ShellSort(int n) {
     }
 }
 
+// 冒泡排序：每一趟排序将最小的元素冒到最前面
+void BubbleSort(int n) {
+    for (int i = 0; i < n - 1; i++) {   // n-1 趟
+        bool flag = false;
+        for (int j = n - 1; j > i; j--) {
+            if (arr[j - 1] > arr[j]) {  // 保证稳定性
+                swap(arr[j - 1], arr[j]);
+                flag = true;
+            }
+        }
+        // 本趟排序如果没有发生交换，表明表已经有序
+        if (!flag) {
+            return;
+        }
+    }
+}
+
+// 快速排序
+void QuickSort(int left, int right) {
+    if (left >= right) {  // Partition 可能返回 right，则进行下层递归时 left > right
+        return;
+    }
+    int pos = Partition(left, right);
+    QuickSort(left, pos - 1);
+    QuickSort(pos + 1, right);
+}
+
+int Partition(int left, int right) {
+    int pivot = left + rand() % (right - left + 1); // 随机选择任一 left ~ right 中的元素作为 pivot
+    swap(arr[left], arr[pivot]);                    // 将 pivot 元素放到序列最开始
+    while (left < right) {                          // 当 left == right 时表示找到了最终的 pivot 位置
+        while (left < right && arr[left] <= arr[right]) {
+            right --;
+        }
+        swap(arr[left], arr[right]);
+        while (left < right && arr[left] <= arr[right]) {
+            left ++;
+        }
+        swap(arr[left], arr[right]);
+    }
+    return left;
+}
+
 void Combine(int left, int mid, int right) {
     int i = left, j = mid + 1, k = left;
     while (i <= mid && j <= right) {
@@ -81,30 +124,9 @@ void MergeSort(int left, int right) {
     Combine(left, mid, right);   
 }
 
-int Partition(int left, int right) {
-    int pivot = left + rand() % (right - left + 1); // 随机选择任一 left ~ right 中的元素作为 pivot
-    swap(arr[left], arr[pivot]);                    // 将 pivot 元素放到序列最开始
-    while (left < right) {                          // 当 left == right 时表示找到了最终的 pivot 位置
-        while (left < right && arr[left] <= arr[right]) {
-            right --;
-        }
-        swap(arr[left], arr[right]);
-        while (left < right && arr[left] <= arr[right]) {
-            left ++;
-        }
-        swap(arr[left], arr[right]);
-    }
-    return left;
-}
 
-void QuickSort(int left, int right) {
-    if (left >= right) {  // Partition 可能返回 right，则进行下层递归时 left > right
-        return;
-    }
-    int pos = Partition(left, right);
-    QuickSort(left, pos - 1);
-    QuickSort(pos + 1, right);
-}
+
+
 
 int main() {
     int n;

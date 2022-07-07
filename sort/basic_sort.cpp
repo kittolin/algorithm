@@ -30,6 +30,24 @@ void InsertSort(int n) {
     }
 }
 
+// 希尔排序：先追求部分有序，再逐步逼近全局有序
+// 将待排序表按增量 d 分成多个子表，对每个子表分别进行插入排序；缩小增量重复上述过程，直至 d = 1
+void ShellSort(int n) {
+    for (int d = n / 2; d >= 1; d /= 2) {
+        for (int i = d + 1; i <= n; i++) {  // 每个子表轮流切换着排序
+            if (arr[i] < arr[i - d]) {
+                arr[0] = arr[i];            // arr[0] 不存储元素，不是哨兵，只是暂存单元
+                // 插入到前面的有序增量子表
+                int j;
+                for (j = i - d; j > 0 && arr[j] > arr[0]; j -= d) {
+                    arr[j + d] = arr[j];
+                }
+                arr[j + d] = arr[0];
+            }
+        }
+    }
+}
+
 void Combine(int left, int mid, int right) {
     int i = left, j = mid + 1, k = left;
     while (i <= mid && j <= right) {

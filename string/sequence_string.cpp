@@ -5,6 +5,9 @@ typedef struct {
     int length;
 } SString;
 
+int next[MAXLEN];   // 若模式串的第 j 个字符失配，从模式串的第 next[j] 个字符继续匹配
+int nextval[MAXLEN];
+
 // 用 Sub 返回主串 S 的第 pos 个字符起长度为 len 的子串
 bool SubString(SString &sub, SString s, int pos, int len) {
     if (pos + len - 1 > s.length) {     // 子串范围越界
@@ -44,5 +47,36 @@ int Index(SString s, SString t) {
         return i - t.length;
     } else {
         return 0;   // 找不到对应的子串
+    }
+}
+
+// KMP 算法，求 next 数组 O(m)，模式匹配 O(n)，故最坏时间复杂度 O(m + n)
+int Index_KMP(SString s, SString t) {
+    int i = 1, j = 1;
+    while (i <= s.length && j <= t.length) {
+        if (j == 0 || s.chs[i] == t.chs[j]) {
+            i ++;
+            j ++;
+        } else {
+            j = next[j];    // 主串指针不回溯
+        }
+    }
+
+    if (j > t.length) {
+        return i - t.length;
+    } else {
+        return 0;   // 找不到对应的子串
+    }
+}
+
+// 由 next 数组推出 nextval 数组 
+void NextToNextVal(SString t) {
+    nextval[1] = 0;
+    for (int j = 2; j <= t.length; j++) {
+        if (t.chs[next[j]] == t.chs[j]) {
+            nextval[j] = nextval[next[j]];
+        } else {
+            nextval[j] = next[j];
+        }
     }
 }

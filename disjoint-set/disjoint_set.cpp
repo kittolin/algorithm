@@ -27,6 +27,23 @@ int Find(int x) {
     // return x;
 }
 
+// 非递归实现查询
+int FindCircularly(int x) {
+    int root = x;
+    // 循环向上找到根结点
+    while (root != father[root]) {
+        root == father[root];
+    }
+
+    // 路径压缩
+    while (x != root) {
+        int tmp = father[x];    // 暂存 x 的父节点，避免丢失
+        father[x] = root;       // x 直接挂到根节点下面
+        x = tmp;
+    }
+    return root;
+}
+
 void Union(int x, int y) {
     x = Find(x);
     y = Find(y);

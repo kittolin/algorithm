@@ -1,6 +1,6 @@
 /*
 * 名称：Aggressive Cows
-* 来源：北京大学 poj
+
 * 链接：http://poj.org/problem?id=2456
 * 算法：最大的最小间距，采用二分策略，转化为判定性问题
 *      (1)判断间距 d 是否可行

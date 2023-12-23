@@ -1,6 +1,6 @@
 /*
 * 名称：今年暑假不 AC
-* 来源：杭电 ACM
+
 * 链接：http://acm.hdu.edu.cn/showproblem.php?pid=2037
 * 分析：不能重叠的情况下最多的区间，选右端点最小
 *      (1)开始时间最早 ❌

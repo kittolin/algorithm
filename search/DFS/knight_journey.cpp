@@ -1,6 +1,6 @@
 /*
 * 名称：A Knight's Journey
-* 来源：北京大学 POJ
+
 * 链接：http://poj.org/problem?id=2488
 * 
 * 算法：DFS

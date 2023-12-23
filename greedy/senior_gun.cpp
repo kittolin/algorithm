@@ -1,6 +1,6 @@
 /*
 * 名称：Senior's Gun
-* 来源：杭电 ACM
+
 * 链接：http://acm.hdu.edu.cn/showproblem.php?pid=5281
 * 
 * 算法：关键条件不用杀死所有的怪，所以用贪心算法

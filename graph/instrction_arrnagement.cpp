@@ -1,6 +1,6 @@
 /*
 * 名称：Instrction Arrangement
-* 来源：杭电 ACM
+
 * 链接：http://acm.hdu.edu.cn/showproblem.php?pid=4109
 * 分析：即求关键路径的汇点的最早开始时间
 */

@@ -1,6 +1,6 @@
 /*
 * 名称：Zero-complexity Transposition
-* 来源：上海交通大学复试上机题
+
 * 链接：http://t.cn/AiKa20bt
 * 难度：简单
 */

@@ -1,6 +1,6 @@
 /*
 * 名称：汉诺塔 III
-* 来源：杭电 ACM
+
 * 链接：http://acm.hdu.edu.cn/showproblem.php?pid=2064
 * 递归算法：(1)将 A 上的 n-1 个圆盘移动 A->B->C，移动 F(n-1)次；
 *         (2)将 A 上的最后一个圆盘移动到 B，移动 1 次；

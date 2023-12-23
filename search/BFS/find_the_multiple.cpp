@@ -1,6 +1,6 @@
 /*
 * 名称：Find The Multiple
-* 来源：北京大学 POJ
+
 * 链接：http://poj.org/problem?id=1426
 *
 * 算法：BFS

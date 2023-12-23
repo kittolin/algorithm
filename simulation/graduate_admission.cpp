@@ -1,6 +1,6 @@
 /*
 * 名称：Graduate Admission
-* 来源：浙江大学复试上机题
+
 * 链接：http://985.so/kim8
 * 难度：中等
 */

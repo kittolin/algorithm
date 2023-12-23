@@ -1,6 +1,6 @@
 /*
 * 名称：叠筐
-* 来源：杭电 ACM
+
 * 链接：http://acm.hdu.edu.cn/showproblem.php?pid=2074
 * 难度：中等
 */

@@ -1,6 +1,6 @@
 /*
 * 名称：确定比赛名次
-* 来源：杭电 ACM
+
 * 链接：http://acm.hdu.edu.cn/showproblem.php?pid=1285
 * 算法：拓扑排序
 */

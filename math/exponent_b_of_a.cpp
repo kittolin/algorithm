@@ -1,6 +1,6 @@
 /*
 * 名称：A ^ B 的最后三位整数
-* 来源：杭电 ACM
+
 * 链接：http://acm.hdu.edu.cn/showproblem.php?pid=2035
 * 
 */

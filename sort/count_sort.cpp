@@ -1,6 +1,6 @@
 /*
 * 名称：从大到小输出前 m 大的数
-* 来源：杭电 ACM
+
 * 链接：https://acm.hdu.edu.cn/showproblem.php?pid=1425
 */
 

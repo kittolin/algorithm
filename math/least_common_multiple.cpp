@@ -1,6 +1,6 @@
 /*
 * 名称：最小公倍数(LCM)
-* 来源：杭电 ACM
+
 * 链接：https://acm.hdu.edu.cn/showproblem.php?pid=1108
 */
 

@@ -1,6 +1,6 @@
 /*
 * 名称：Primary Arithmetic
-* 来源：北京大学复试上机题
+
 * 链接：http://985.so/k4wd
 * 难度：中等
 */

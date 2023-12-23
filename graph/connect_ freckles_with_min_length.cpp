@@ -1,6 +1,6 @@
 /*
 * 名称：Freckles
-* 来源：北京大学复试上机题
+
 * 链接：http://985.so/k5xu
 * 难度：简单
 * 算法：最小生成树问题，Kruskal Algorithm

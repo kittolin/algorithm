@@ -1,6 +1,6 @@
 /*
 * 名称：最长公共子序列
-* 来源：杭电 acm
+
 * 链接：https://acm.hdu.edu.cn/showproblem.php?pid=1159
 *
 * 算法：两序列都固定一端，求以 Ai，Bj 为最后元素的的最长公共子序列

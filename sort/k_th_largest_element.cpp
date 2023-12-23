@@ -1,6 +1,6 @@
 /*
 * 名称：Kth Largest Element in an Array
-* 来源：Leetcode
+
 * 链接：https://leetcode.com/problems/kth-largest-element-in-an-array/
 * 难度：中等
 */

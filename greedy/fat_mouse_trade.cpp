@@ -1,6 +1,6 @@
 /*
 * 名称：FatMouse' Trade
-* 来源：杭电 ACM
+
 * 链接：http://acm.hdu.edu.cn/showproblem.php?pid=1009
 * 算法：(1)每次购买一件商品
 *      (2)选性价比最高的商品

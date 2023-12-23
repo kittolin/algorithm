@@ -1,6 +1,6 @@
 /*
 * 名称：猫狗收容所
-* 来源：程序员面试金典
+
 * 链接：https://leetcode-cn.com/problems/animal-shelter-lcci/
 * 难度：简单
 */

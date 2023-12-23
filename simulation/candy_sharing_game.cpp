@@ -1,6 +1,6 @@
 /*
 * 名称：Candy Sharing Game
-* 来源：北京大学复试上机题
+
 * 链接：http://985.so/amd8
 * 难度：较难
 */

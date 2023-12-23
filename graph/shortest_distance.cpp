@@ -1,6 +1,6 @@
 /*
 * 名称：畅通工程续-最短路径问题
-* 来源：杭电 ACM
+
 * 链接：ttp://acm.hdu.edu.cn/showproblem.php?pid=1874
 * 算法：Dijkstra
 */

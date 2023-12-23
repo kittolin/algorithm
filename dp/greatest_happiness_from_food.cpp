@@ -1,6 +1,6 @@
 /*
 * 名称：从食物中获取最大幸福值
-* 来源：杭电 ACM
+
 * 链接：https://acm.hdu.edu.cn/showproblem.php?pid=4508
 * 分析：没有限制每种食物的数量，完全背包问题
 * 注意：C++ 识别不了 max，要用 G++

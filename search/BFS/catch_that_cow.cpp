@@ -1,6 +1,6 @@
 /*
 * 名称：Catch That Cow
-* 来源：北京大学 POJ
+
 * 链接：http://poj.org/problem?id=3278
 *
 * 算法：BFS
